@@ -10,6 +10,13 @@
     <title>Scheduling App</title>
 </head>
 <body>
+    <div class="navbar navbar-dark navbar-expand-sm bg-dark"> 
+        <div class="navbar-nav ml-auto">
+            <a class="navbar-brand">Scheduling App</a>
+            <a class="nav-item nav-link" href="{% url 'week_view' %}">Home</a>
+            <a class="nav-item nav-link" href="{% url 'event_view' %}">Add Event</a>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col">Sunday</div>
@@ -19,6 +26,106 @@
             <div class="col">Thursday</div>
             <div class="col">Friday</div>
             <div class="col">Saturday</div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul>
+                    {% for event in eventsun %}
+                        <li>
+                        <div class="card">
+                            <div class="card-header">{{event.title}}</div>
+                            <p class="card-text">{{event.description}}</p>
+                            <a class="btn btn-primary" href="{% url 'event' event.pk %}">View</a>
+                            <a class="btn btn-danger" href="{% url 'delete' event.pk %}">Delete</a>
+                        </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col">
+                <ul>
+                    {% for event in eventmon %}
+                        <li>
+                        <div class="card">
+                            <div class="card-header">{{event.title}}</div>
+                            <p class="card-text">{{event.description}}</p>
+                            <a class="btn btn-primary" href="{% url 'event' event.pk %}">View</a>
+                            <a class="btn btn-danger" href="{% url 'delete' event.pk %}">Delete</a>
+                        </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col">
+                <ul>
+                    {% for event in eventtues %}
+                        <li>
+                        <div class="card">
+                            <div class="card-header">{{event.title}}</div>
+                            <p class="card-text">{{event.description}}</p>
+                            <a class="btn btn-primary" href="{% url 'event' event.pk %}">View</a>
+                            <a class="btn btn-danger" href="{% url 'delete' event.pk %}">Delete</a>
+                        </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col">
+                <ul>
+                    {% for event in eventwed %}
+                        <li>
+                        <div class="card">
+                            <div class="card-header">{{event.title}}</div>
+                            <p class="card-text">{{event.description}}</p>
+                            <a class="btn btn-primary" href="{% url 'event' event.pk %}">View</a>
+                            <a class="btn btn-danger" href="{% url 'delete' event.pk %}">Delete</a>
+                        </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col">
+                <ul>
+                    {% for event in eventthurs %}
+                        <li>
+                        <div class="card">
+                            <div class="card-header">{{event.title}}</div>
+                            <p class="card-text">{{event.description}}</p>
+                            <a class="btn btn-primary" href="{% url 'event' event.pk %}">View</a>
+                            <a class="btn btn-danger" href="{% url 'delete' event.pk %}">Delete</a>
+                        </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col">
+                <ul>
+                    {% for event in eventfri %}
+                        <li>
+                        <div class="card">
+                            <div class="card-header">{{event.title}}</div>
+                            <p class="card-text">{{event.description}}</p>
+                            <a class="btn btn-primary" href="{% url 'event' event.pk %}">View</a>
+                            <a class="btn btn-danger" href="{% url 'delete' event.pk %}">Delete</a>
+                        </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col">
+                <ul>
+                    {% for event in eventsat %}
+                        <li>
+                        <div class="card">
+                            <div class="card-header">{{event.title}}</div>
+                            <p class="card-text">{{event.description}}</p>
+                            <a class="btn btn-primary" href="{% url 'event' event.pk %}">View</a>
+                            <a class="btn btn-danger" href="{% url 'delete' event.pk %}">Delete</a>
+                        </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </div>
 </body>

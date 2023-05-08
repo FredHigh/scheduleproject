@@ -10,5 +10,14 @@
     <title>Scheduling App - Event View</title>
 </head>
 <body>
+    {% if event %}
+    <div class="card" style="width: 20rem;">
+        <div class="card-header">{{event.title}}</div>
+        <p class="card-text">{{event.start_time}} - {{event.end_time}} | {{event.day}}</p>
+        <p class="card-text">{{event.description}}</p>
+    </div>
+    {% else %}
+    <p>Event not available!</p>
+    {% endif %}
 </body>
 </html>
